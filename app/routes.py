@@ -96,9 +96,9 @@ def ex1():
 
 @app.route('/anime')
 def anime():
-	
-	title="Your anime liste!"
-	user = {'username': 'Test'}
-	return render_template('anime.html', title=title, user=user, posts=posts)
+    title="Your anime liste!"
+    db = get_db()
+    anime = db.query("SELECT * from anime")
+    return render_template('anime.html', title=title, anime=anime)
 	
 
