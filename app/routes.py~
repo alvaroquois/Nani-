@@ -69,7 +69,7 @@ def login():
         else:
             session['username'] = username
             return redirect(url_for('index'))
-    return render_template('login.html', title=title, error=error)
+	    return render_template('login.html', title=title, error=error)
 
 @app.route('/logout')
 def logout():
@@ -101,7 +101,7 @@ def anime():
     anime = db.query("SELECT * from anime")
     return render_template('anime.html', title=title, anime=anime) 
     
-@app.route('/addanime', methods=['POST', 'GET'])
+    @app.route('/addanime', methods=['POST', 'GET'])
 def add_anime():
     title="Nani - Add a new anime"
     error = None
