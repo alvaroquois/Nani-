@@ -89,17 +89,17 @@ def ex1():
         },
         {
             'author': {'username': 'Susan'},
-            'body': 'The Avengers movie was so cool!'
+            'body': 'I like trains!'
         }
     ]
     return render_template('ex1.html', title=title, user=user, posts=posts)
 
-@app.route('/anime')
-def anime():
-    title="Your anime liste!"
+@app.route('/animes')
+def animes():
+    title="Your anime list!"
     db = get_db()
-    anime = db.query("SELECT * from anime")
-    return render_template('anime.html', title=title, anime=anime) 
+    animes = db.query("SELECT * from anime")
+    return render_template('animes.html', title=title, animes=animes) 
     
 @app.route('/addanime', methods=['POST', 'GET'])
 def add_anime():
@@ -121,5 +121,15 @@ def add_anime():
                 db = get_db()
                 db.add_anime(duration, date, grade, original_title, original_languae)
                 msg = 'Anime. was successfully added!'
-	
-
+        return render_template('addanime.html', title=title, msg=msg, error=error)
+    else:
+        return reidrect(url_for('login'))
+        
+@app.route('/studio')
+def studio():
+    title="Studios"
+    db =db_db()
+    studio = db.query('SELECT * from studio')
+    return render_template('studio.html', title=title, studio=studio)
+    
+    

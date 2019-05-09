@@ -12,6 +12,10 @@ import app.db as db
 db = db.db_handler()
 db.query('select * from user')
 
+# create password hash
+import app.utils as u
+print u.hash_sha1('1234')
+
 
 
 ```

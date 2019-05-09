@@ -84,10 +84,20 @@ INSERT INTO role (id,name) VALUES (1,'admin');
 INSERT INTO role (id,name) VALUES (2,'user');
 
 -- add 2 users
-INSERT INTO user (username,passwd_hash, first_name,last_name, email,role_id) VALUES ('max', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 'Maxime', 'Lottaz', 'jeffy@gmail.com',1);
-INSERT INTO user (username,passwd_hash, first_name,last_name, email,role_id) VALUES ('alva', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 'Alvaro', 'Moya', 'blablaaa@gmail.com',1);
+INSERT INTO user (username, passwd_hash, first_name,last_name, email,role_id) VALUES ('max', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 'Maxime', 'Lottaz', 'jeffy@gmail.com',1);
+INSERT INTO user (username, passwd_hash, first_name,last_name, email,role_id) VALUES ('alva', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 'Alvaro', 'Moya', 'blablaaa@gmail.com',1);
 
-
+-- add 10 animes
+INSERT INTO anime (anime_name, category_anime, genre, studio, version) VALUES ('Dragon Ball, Shonen, Action, Toei, serie)
+INSERT INTO anime (anime_name, category_anime, genre, studio, version) VALUES ('Naruto, Shonen, Action, Studio Pierrot, serie)
+INSERT INTO anime (anime_name, category_anime, genre, studio, version) VALUES ('Naruto Shippuden, Shonen, Action, Studio Pierrot, serie)
+INSERT INTO anime (anime_name, category_anime, genre, studio, version) VALUES ('One Piece, Shonen, Action, Toei, serie)
+INSERT INTO anime (anime_name, category_anime, genre, studio, version) VALUES ('JJBA, Shonen, Action, David Production, serie)
+INSERT INTO anime (anime_name, category_anime, genre, studio, version) VALUES ('Dragon Ball, Shonen, Action, Toei, serie)
+INSERT INTO anime (anime_name, category_anime, genre, studio, version) VALUES ('Dragon Ball, Shonen, Action, Toei, serie)
+INSERT INTO anime (anime_name, category_anime, genre, studio, version) VALUES ('Dragon Ball, Shonen, Action, Toei, serie)
+INSERT INTO anime (anime_name, category_anime, genre, studio, version) VALUES ('Dragon Ball, Shonen, Action, Toei, serie)
+INSERT INTO anime (anime_name, category_anime, genre, studio, version) VALUES ('Dragon Ball, Shonen, Action, Toei, serie)
 
 
 
