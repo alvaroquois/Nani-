@@ -42,12 +42,13 @@ def add_user():
             email = request.form['email']
             username = request.form['username']
             passwd = request.form['password']
-            if firstname is None or lastname is None or email is None or username is None or passwd is None:
+            role = request.form['role']
+            if firstname is None or lastname is None or email is None or username is None or passwd is None or role is None:
                 error = 'All fields are mandatory.'
             else:
                 passwd_hash = hash_sha1(passwd) 
                 db = get_db()
-                db.add_user(username, passwd_hash, firstname, lastname, email)
+                db.add_user(username, passwd_hash, firstname, lastname, email, role)
                 msg = 'User was successfully added!'
         return render_template('adduser.html', title=title, msg=msg, error=error)
     else:
@@ -108,18 +109,16 @@ def add_anime():
     msg = None
     if session['username']:
         if request.method=='POST':
-            duration = request.form['duration']
-            date = request.form['date']
-            grade = request.form['grade']
-            original_title = request.form['original_title']
-            original_language = request.form['original_language']
-            age = request.form['age']
+            Name  = request.form['name']
+            category = request.form['category']
+            genre = request.form['genre']
+            studio = request.form['studio']
             
-            if duration is None or date is None or grade is None or orignal_title is None or orignal_language is None:
+            if name is None or category is None or genre is None or studio is None:
                 error = 'All fields are mandatory.'
             else:
                 db = get_db()
-                db.add_anime(duration, date, grade, original_title, original_languae)
+                db.add_anime(name, category, genre, studio)
                 msg = 'Anime. was successfully added!'
         return render_template('addanime.html', title=title, msg=msg, error=error)
     else:
@@ -131,5 +130,5 @@ def studio():
     db =db_db()
     studio = db.query('SELECT * from studio')
     return render_template('studio.html', title=title, studio=studio)
-    
+			    
     

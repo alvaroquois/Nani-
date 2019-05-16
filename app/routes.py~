@@ -124,4 +124,12 @@ def add_anime():
         return render_template('addanime.html', title=title, msg=msg, error=error)
     else:
         return reidrect(url_for('login'))
-
+        
+@app.route('/studio')
+def studio():
+    title="Studios"
+    db =db_db()
+    studio = db.query('SELECT * from studio')
+    return render_template('studio.html', title=title, studio=studio)
+    
+    
