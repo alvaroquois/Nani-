@@ -10,7 +10,8 @@ CREATE TABLE anime (
     name varchar(255) NOT NULL,
     category_id integer NOT NULL,
     genre_id integer NOT NULL,
-    studio_id integer NOT NULL
+    studio_id integer NOT NULL,
+    version_id integer NOT NULL
 );
 
 -- Table: category
@@ -102,11 +103,14 @@ INSERT INTO studio (id, name, country, city) VALUES (4, 'A1 Pictures', 'Japan', 
 
 -- anime_category
 -- TODO
---INSERT INTO category_anime (id, version) VALUES (1, 'film');
--- INSERT INTO category_anime (id, version) VALUES (2, 'serie');
+INSERT INTO category_anime (anime_id, category_id) VALUES (1, 'film');
+INSERT INTO category_anime (anime_id, category_id) VALUES (2, 'serie');
+
+-- version
+INSERT INTO version (id, name, language, duration, anime_id) VALUES (1, 'version1', 'japanese','20min', 1);
 
 -- add 10 animes
-INSERT INTO anime (name, category_id, genre_id, studio_id) VALUES ('Naruto', 1, 1, 1);
+INSERT INTO anime (name, category_id, genre_id, studio_id, version_id) VALUES ('Naruto', 1, 1, 1, 1);
 -- INSERT INTO anime (anime_name, category_anime, genre, studio, version) VALUES ('Naruto', Shonen, Action, Studio Pierrot, serie)
 -- INSERT INTO anime (anime_name, category_anime, genre, studio, version) VALUES ('Naruto Shippuden, Shonen, Action, Studio Pierrot, serie)
 -- INSERT INTO anime (anime_name, category_anime, genre, studio, version) VALUES ('One Piece, Shonen, Action, Toei, serie)

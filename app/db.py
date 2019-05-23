@@ -69,3 +69,9 @@ class db_handler:
             Add a new user
         """
         self.edit('INSERT INTO user (username, passwd_hash, first_name, last_name, email, role_id) VALUES (?,?,?,?,?,?)', (username, passwd_hash, firstname, lastname, email, role,))
+
+    def add_anime(self, name, category, genre, studio, version):
+        """
+            Add a new anime
+        """
+        self.edit('INSERT INTO anime (name, category_id, genre_id, studio_id, version_id) VALUES (?,?,?,?,?)', (name, category, genre, studio, version,))

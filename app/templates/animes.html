@@ -6,16 +6,16 @@
       		<br>
 		<table class="table">
 		<thead>
-			<tr><td><strong>Anime</strong></td><td><strong>category</strong></td><td><strong>genre</strong></td><td><strong>studio</strong></td><td><strong>version</strong></td>
+			<tr><td><strong>Name</strong></td><td><strong>category</strong></td><td><strong>genre</strong></td><td><strong>studio</strong></td><td><strong>version</strong></td>
 
 
 
 <!--anime_name, category_anime, genre, studio, version) --!>		
 		</thead>
 		<tbody>
-    		{% for a in anime %}
+    		{% for a in animes %}
 		<tr>
-			<td>{{ a.id}}</td><td>{{ a.description }}</td>
+			<td>{{ a.name }}</td><td>{{ a.category_id }}</td><td>{{ a.genre_id }}</td><td>{{ a.studio_id }}</td><td>{{ a.version_id }}</td>
 		</tr>
     		{% endfor %}
 		</tbody>

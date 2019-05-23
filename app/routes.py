@@ -108,21 +108,25 @@ def add_anime():
     error = None
     msg = None
     if session['username']:
+        db = get_db() 
         if request.method=='POST':
-            Name  = request.form['name']
+            name  = request.form['name']
             category = request.form['category']
             genre = request.form['genre']
             studio = request.form['studio']
-            
-            if name is None or category is None or genre is None or studio is None:
+            version = request.form['version']
+            if name is None or category is None or genre is None or studio is None or version is None:
                 error = 'All fields are mandatory.'
             else:
-                db = get_db()
-                db.add_anime(name, category, genre, studio)
+                db.add_anime(name, category, genre, studio, version)
                 msg = 'Anime. was successfully added!'
-        return render_template('addanime.html', title=title, msg=msg, error=error)
+	categories = db.query("SELECT * FROM category")
+        genres = db.query("SELECT * FROM genre")
+        studios = db.query("SELECT * FROM studio")
+        versions = db.query("SELECT * FROM version")
+        return render_template('addanime.html', title=title, categories=categories, genres=genres, studios=studios, versions=versions,  msg=msg, error=error)
     else:
-        return reidrect(url_for('login'))
+        return redirect(url_for('login'))
         
 @app.route('/studio')
 def studio():
