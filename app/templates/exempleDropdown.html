@@ -1,0 +1,49 @@
+	<div class="container">
+		<h1>Add Anime</h1>
+		<br>
+		<form action="" method="post">
+			<div class="form-group">
+				<input type="text" placeholder="name" name="name" value="{{ request.form.name }}">
+			</div>
+			
+			<div class="form-group">
+				<select name="" id="">
+					{% for key, genre in request.form.category %}
+					<option name="category" value="{{ category }}"></option>
+					{% endfor %}
+				</select>
+				<!--<input type="text" placeholder="category" name="category" value="{{ request.form.category}}">-->
+			</div>
+
+			<div class="form-group">
+				<select name="" id="">
+					{% for key, genre in request.form.genre %}
+					<option name="genre" value="{{ genre }}"></option>
+					{% endfor %}
+				</select>
+				<!--<input type="text" placeholder="genre" name="genre" value="{{ request.form.genre }}">-->
+			</div>
+
+			<div class="form-group">
+				<select name="" id="">
+					{% for key, studio in request.form.studio %}
+					<option name="studio" value="{{ studio }}"></option>
+					{% endfor %}
+				</select>
+				<!--<input type="text" placeholder="studio" name="studio" value="{{ request.form.studio }}">-->
+			</div>
+
+			<div class="form-group">
+				<select name="" id="">
+					{% for key, genre in request.form.version %}
+					<option name="version" value="{{ version }}"></option>
+					{% endfor %}
+				</select>
+				<!--<input type="text" placeholder="version" name="version" value="{{ request.form.version}}">-->
+			</div>
+
+			<button class="btn btn-primary" type="submit">Add Anime</button>
+		</form>
+		<p class="error"><strong>Error:</strong></p>
+		<p class="msg">{{ msg }}</p>
+	</div>
